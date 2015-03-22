@@ -1,0 +1,11 @@
+{
+	"name": "devicejs",
+	"version": "1.0.0",
+	"description": "Browser device detection",
+	"author": "Unknown",
+	"main": "dist/devicejs.min .js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Mosho1/devicejs.git"
+	}
+}

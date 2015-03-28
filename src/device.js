@@ -6,38 +6,6 @@
 	if (hasDefine) {
 		// AMD Module or CMD Module
 		define(definition);
-	} else if (hasExports) {
-		// Node.js Module
-		module.exports = (function () {
-			var os = require("os");
-			var device = {
-				tmpdir: 'There is no tmpdir found!',
-				endianness: 'There is no endianness found!',
-				hostname: 'There is no hostname found!',
-				type: 'There is no type found!',
-				platform: 'There is no platform found!',
-				arch: 'There is no arch found!',
-				release: 'There is no release found!',
-				uptime: 'There is no uptime found!',
-				loadavg: 'There is no loadavg found!',
-				totalmem: 'There is no totalmem found!',
-				networkInterfaces: 'There is no networkInterfaces found!',
-				EOL: 'There is no EOL found!',
-				cpus: 'There is no cpus found!',
-				getNetworkInterfaces: 'There is no getNetworkInterfaces found!',
-				tmpDir: 'There is no tmpDir found!'
-			};
-			for (var v in os) {
-				if (({}).hasOwnProperty.call(os, v)) {
-					if (typeof os[v] === 'function') {
-						device[v] = os[v]();
-					} else {
-						device[v] = os[v];
-					}
-				}
-			}
-			return device;
-		})();
 	} else {
 		// Assign to common namespaces or simply the global object (window)
 		this[name] = definition();
